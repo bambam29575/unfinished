@@ -7,7 +7,7 @@ class node {
     int data;
     node *link;
 };
-node *ptr, *tail, *head, *temp;
+node *ptr, *tail, *head, *temp, *prev, *next, *cur;
 char ch, ch2;
 int pos, i, count = 0;
 
@@ -15,6 +15,7 @@ void display();
 void insert();
 void del();
 void oper();
+void reverseLL();
 
 int main(){
     cout <<"1 st node"<< endl;
@@ -120,4 +121,23 @@ void del(){
         }
     }
     oper();
+}
+
+void reverseLL(){
+    tail = head;
+    prev = nullptr;
+    cur = head;
+    next = nullptr;
+    
+    while(cur != nullptr){
+        next = cur->link;
+        cur->link = prev;
+        prev = cur;
+        cur = next;
+    }
+    
+    head = prev;
+    oper();
+
+
 }
