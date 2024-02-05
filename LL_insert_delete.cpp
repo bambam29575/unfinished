@@ -59,6 +59,7 @@ void insert(){
            temp = head;
            cout << "position" << endl;
            cin >> pos;
+           i = 1;
            while(i < pos-1 ){
                temp = temp->link;
                i++;
@@ -123,21 +124,21 @@ void del(){
     oper();
 }
 
-void reverseLL(){
-    tail = head;
-    prev = nullptr;
-    cur = head;
-    next = nullptr;
+// void reverseLL(){
+//     tail = head;
+//     prev = nullptr;
+//     cur = head;
+//     next = nullptr;
     
-    while(cur != nullptr){
-        next = cur->link;
-        cur->link = prev;
-        prev = cur;
-        cur = next;
-    }
+//     while(cur != nullptr){
+//         next = cur->link;
+//         cur->link = prev;
+//         prev = cur;
+//         cur = next;
+//     }
     
-    head = prev;
-    oper();
+//     head = prev;
+//     oper();
 
 
-}
+// }
